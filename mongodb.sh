@@ -43,4 +43,4 @@ cp  mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
  check $? "Restarting the  mongdb service"
 
  systemctl status mongod
- 
+ exit 1
