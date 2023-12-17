@@ -38,14 +38,9 @@ check $? "Disabling current NodeJS"
 dnf module enable nodejs:18 -y  &>> $LOGFILE
 check $? "Enabling NodeJS:18"
 
-dnf list nodejs
-if [ $? -ne 0 ] 
-then
+
 dnf install nodejs -y  &>> $LOGFILE
 check $? "Installing NodeJS:18"
-else
- echo -e "Nodejs is already installed $Y SKIPPING $N"
-fi
 
 id roboshop #if roboshop user does not exist, then it is failure
 if [ $? -ne 0 ]
