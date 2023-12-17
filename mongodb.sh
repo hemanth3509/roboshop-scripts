@@ -6,7 +6,7 @@ LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 echo "Scripting Started executing at $TIMESTAMP" &>> $LOGFILE
 
-if [ $ID ne 0 ]
+if [ $ID -ne 0 ]
 then
 echo "Please run the script with root access"
 exit 1
