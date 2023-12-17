@@ -60,7 +60,7 @@ npm install  &>> $LOGFILE
 check $? "Installing dependencies"
 
 # use absolute, because catalogue.service exists there
-cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
+cp catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 check $? "Copying catalogue service file"
 
 systemctl daemon-reload &>> $LOGFILE
@@ -72,7 +72,7 @@ check $? "Enable catalogue"
 systemctl start catalogue &>> $LOGFILE
 check $? "Starting catalogue"
 
-cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
+cp mongo.repo /etc/yum.repos.d/mongo.repo
 check $? "copying mongodb repo"
 
 dnf install mongodb-org-shell -y &>> $LOGFILE
