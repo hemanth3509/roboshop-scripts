@@ -9,9 +9,6 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-
-
-
 echo "Scripting Started executing at $TIMESTAMP " &>> $LOGFILE 
 
 check (){
