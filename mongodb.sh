@@ -4,15 +4,23 @@ ID=$(id -u )  #it gives the id num of the current user ge 0, if root user it is 
 TIMESTAMP=$(date +%F-%T)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
+
+
+
 echo "Scripting Started executing at $TIMESTAMP " &>> $LOGFILE 
 
 check (){
    if [ $1 -ne 0 ]
    then
-        echo "$2...FAILED"
+        echo "$2... $R FAILED $N"
         exit 1
    else 
-        echo "$2... Success"
+        echo "$2... $G Success $N"
    fi
 }
 
@@ -42,5 +50,4 @@ cp  mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
  systemctl restart mongod &>> $LOGFILE
  check $? "Restarting the  mongdb service"
 
- systemctl status mongod
- exit 1
+
