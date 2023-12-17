@@ -42,7 +42,7 @@ check $? "Enabling NodeJS:18"
 dnf install nodejs -y  &>> $LOGFILE
 check $? "Installing NodeJS:18"
 
-id roboshop #if roboshop user does not exist, then it is failure
+id roboshop &>> $LOGFILE #if roboshop user does not exist, then it is failure
 if [ $? -ne 0 ]
 then
     useradd roboshop
