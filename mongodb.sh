@@ -4,7 +4,7 @@ ID=$(id -u )  #it gives the id num of the current user ge 0, if root user it is 
 TIMESTAMP=$(date +%D-%T)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
-echo "Scripting Started executing at $TIMESTAMP" &>> $LOGFILE
+echo "Scripting Started executing at $TIMESTAMP &>> $LOGFILE "
 
 if [ $ID -ne 0 ]
 then
