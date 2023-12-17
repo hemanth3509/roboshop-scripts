@@ -17,10 +17,10 @@ echo "Scripting Started executing at $TIMESTAMP " &>> $LOGFILE
 check (){
    if [ $1 -ne 0 ]
    then
-        echo "$2... $R FAILED $N"
+        echo -e "$2... $R FAILED $N"
         exit 1
    else 
-        echo "$2... $G Success $N"
+        echo -e "$2... $G Success $N"
    fi
 }
 
