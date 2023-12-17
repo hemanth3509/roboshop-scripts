@@ -60,16 +60,16 @@ npm install  &>> $LOGFILE
 check $? "Installing dependencies"
 
 # use absolute, because catalogue.service exists there
-cp catalouge.service /etc/systemd/system/catalouge.service &>> $LOGFILE
+cp catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 check $? "Copying catalogue service file"
 
 systemctl daemon-reload &>> $LOGFILE
 check $? "catalogue daemon reload"
 
-systemctl enable catalouge &>> $LOGFILE
+systemctl enable catalogue &>> $LOGFILE
 check $? "Enable catalogue"
 
-systemctl start catalouge &>> $LOGFILE
+systemctl start catalogue &>> $LOGFILE
 check $? "Starting catalogue"
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo
