@@ -72,7 +72,7 @@ check $? "Enable catalogue"
 systemctl start catalogue &>> $LOGFILE
 check $? "Starting catalogue"
 
-cp mongo.repo /etc/yum.repos.d/mongo.repo
+cp /home/centos/roboshop-scripts/mongo.repo /etc/yum.repos.d/mongo.repo
 check $? "copying mongodb repo"
 
 dnf install mongodb-org-shell -y &>> $LOGFILE
