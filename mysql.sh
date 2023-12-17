@@ -24,6 +24,7 @@ echo "Script Started executing at $TIMESTAMP" &>> $LOGFILE
 if [ $ID -ne 0 ]
 then
 echo -e "Please run the script with root access $R Error $N " 
+exit 1
 else
 echo -e "Script running with root access $G Success $N "
 fi
