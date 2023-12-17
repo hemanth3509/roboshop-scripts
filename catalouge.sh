@@ -60,7 +60,7 @@ npm install  &>> $LOGFILE
 check $? "Installing dependencies"
 
 # use absolute, because catalogue.service exists there
-cp catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
+cp /home/centos/roboshop-scripts/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 check $? "Copying catalogue service file"
 
 systemctl daemon-reload &>> $LOGFILE
