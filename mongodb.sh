@@ -47,4 +47,5 @@ cp  mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
  systemctl restart mongod &>> $LOGFILE
  check $? "Restarting the  mongdb service"
 
+echo "Script execution completed for further please refer to log file at $LOGFILE"
 
