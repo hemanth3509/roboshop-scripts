@@ -82,3 +82,5 @@ check $? "loading shipping data"
 
 systemctl restart shipping &>> $LOGFILE
 check $? "restart shipping"
+
+echo "Script execution completed for further please refer to log file at $LOGFILE"
