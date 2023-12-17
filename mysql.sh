@@ -44,3 +44,5 @@ check $? "Starting  MySQL Server"
 
 mysql_secure_installation --set-root-pass RoboShop@1 &>> $LOGFILE
 check $? "Setting  MySQL root password"
+
+echo "Script execution completed for further please refer to log file at $LOGFILE"
