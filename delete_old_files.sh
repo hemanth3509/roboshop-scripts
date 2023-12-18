@@ -18,7 +18,7 @@ help(){
 }
 
 action (){
-    echo "inside archive func"
+    echo "inside actions func"
     if [ ! -d "$SOURCE_DIR" ]  # ! denotes opposite
 then
     echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
@@ -27,7 +27,7 @@ then
     then
     echo -e "$G Source directory exists $SOURCE_DIR please archive $N"
     fi
-    if [ "$archive" == "delete " ]
+    if [ "$archive" == "delete" ]
     then 
         echo -e "$G Source directory exists $SOURCE_DIR please delete $N"
     fi
