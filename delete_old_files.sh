@@ -22,6 +22,8 @@ archive (){
     if [ ! -d "$SOURCE_DIR" ] # ! denotes opposite
 then
     echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
+    else
+    echo "$G Source directory exists $SOURCE_DIR $N"
 fi
 }
 delete (){
