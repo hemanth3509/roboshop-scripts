@@ -18,17 +18,23 @@ help(){
     echo -e " -t <time> \n "
 }
 
-
+archive (){
+    echo "inside archive func"
+}
+delete (){
+    echi "inside delete func"
+}
 options(){
     echo "inside options "
-while getopts ":saDdt:" opt;
+while getopts ":s:a:D:d:t:m" opt;
 do
+echo "inside while loop"
 case $opt in
-s) SOURCE_DIR=$1 ; echo "source dir $SOURCE_DIR ";;
-a) echo " archive "; echo "$OPTARGS " ;;
-D) echo "Delete " ;;
-d) DATE=$2 ; echo " date $DATE" ;;
-t) TIME=$3 ; echo " time is $TIME" ;;
+s) SOURCE_DIR=$2 ; echo "source dir $SOURCE_DIR ";;
+a) archive=true ; echo " archive " ;;
+D) Delete=true ; echo "Delete " ;;
+d) DATE=$5 ; echo " date is $DATE" ;;
+t) TIME=$7 ; echo " time is $TIME" ;;
 *) help;exit 1 ;;
 esac
 done
@@ -41,11 +47,15 @@ echo " after options calling"
 
 if [ "$SOURCE_DIR" = " " ] || [ "$DATE" = " " ] || [ "$TIME" = " " ]
 then
-echo "Calling help if inputs are empty"
+echo -e "Calling help if inputs are empty \n"
 help
 fi
 
-
+if [ "$archive" == "true" ]
+then
+archive
+else [ "$Delete" == "true" ]
+fi
 
 
 
