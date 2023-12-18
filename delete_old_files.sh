@@ -5,9 +5,7 @@
 #Y="\e[33m"
 #N="\e[0m"
 
-echo " Script started"
-
-
+echo " Script started $OPTARG"
 
 options(){
     echo "inside options "
