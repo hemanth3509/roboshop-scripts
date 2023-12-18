@@ -1,12 +1,16 @@
 #!/bin/bash
 
-
-
 #R="\e[31m"
 #G="\e[32m"
 #Y="\e[33m"
 #N="\e[0m"
 
+main (){
+    options $@
+}
+
+otions(){
+local OPTIND opt i
 while getopts ":saDdt:" opt;
 do
 case $opt in
@@ -18,6 +22,13 @@ t) TIME=$3 ; echo " time is $TIME" ;;
 \?) help;exit 1 ;;
 esac
 done
+
+}
+
+if [ $SOURCE_DIR = " " ] || [ $DATE = " " ] || [ $TIME = " " ]
+then
+help
+fi
 
 help(){
     echo -e " Please find the below usage of the script \n"
