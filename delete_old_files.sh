@@ -88,10 +88,10 @@ else
 help
 fi
 
-if [ "$archive" == " " ]
-then 
-help
-fi
+#if [ "$archive" != "archive" ] || [ "$archive" == "delete" ]
+#then 
+#help
+#fi
 
 
 #FILES_TO_DELETE=$(find $SOURCE_DIR -type f -mtime +14 -name "*.log")
