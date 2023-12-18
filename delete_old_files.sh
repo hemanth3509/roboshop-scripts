@@ -28,6 +28,11 @@ fi
 }
 delete (){
     echi "inside delete func"
+        if [ ! -d "$SOURCE_DIR" ] # ! denotes opposite
+then
+    echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
+    else
+    echo "$G Source directory exists $SOURCE_DIR $N"
 }
 options(){
     OPTSTRING=":s:a:d:t:"
@@ -70,6 +75,7 @@ if [ "$archive" == "archive" ]
 then
 archive
 else [ "$archive" == "delete" ]
+delete
 fi
 
 
