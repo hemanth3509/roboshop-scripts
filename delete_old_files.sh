@@ -22,15 +22,36 @@ action (){
     if [ ! -d "$SOURCE_DIR" ]  # ! denotes opposite
 then
     echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
-    else [ "$archive" == "archive" ]
+    else
+    if [ "$archive" == "archive" ]
+    then
     echo -e "$G Source directory exists $SOURCE_DIR please archive $N"
+    fi
+    if [ "$archive" == "delete " ]
+    then 
+        echo -e "$G Source directory exists $SOURCE_DIR please delete $N"
+    fi
 fi
+
+
+ #   echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
+ #   else
+ #   if [[ "$archive" == "archive" ]]
+ #   then
+ #   echo -e "$G Source directory exists $SOURCE_DIR please archive $N" ||
+ #   fi
+ #   if [[ " $archive" == "delete " ]]
+ #   then
+ #   echo -e "$G Source directory exists $SOURCE_DIR please delete $N"
+ #   fi
+#fi
+
 
     if [ ! -d "$SOURCE_DIR" ]    # ! denotes opposite
 then
     echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
     else [ "$archive" == "delete" ]
-    echo -e "$G Source directory exists $SOURCE_DIR please delete $N"
+    echo 
 fi
 
 }
