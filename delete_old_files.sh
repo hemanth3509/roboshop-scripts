@@ -25,7 +25,7 @@ done
 
 }
 
-if [ $SOURCE_DIR = " " ] || [ $DATE = " " ] || [ $TIME = " " ]
+if [ "$SOURCE_DIR" = " " ] || [ "$DATE" = " " ] || [ "$TIME" = " " ]
 then
 help
 fi
