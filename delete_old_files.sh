@@ -7,9 +7,7 @@
 
 echo " Script started $OPTARG"
 
-main (){
-options "$@"
-}
+
 
 help(){
     echo -e " Please find the below usage of the script \n"
@@ -37,6 +35,8 @@ esac
 done <<< "$@"
 }
 
+echo "Before calling options"
+options "$@"
 
 echo " after options calling" 
 
