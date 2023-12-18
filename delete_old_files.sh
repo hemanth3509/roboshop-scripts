@@ -44,11 +44,11 @@ D)  DATE=$5 ;
 t) 
     TIME=$7 ; 
     echo " time is $TIME" ;;
-:) 
-    echo " in : please pass the arguments";
-    help; 
-    exit 1 ;;
-?)  help;
+#:) 
+##    echo " in : please pass the arguments";
+#   help; 
+ #   exit 1 ;;
+\?)  help;
     exit 1 ;;
 esac
 done
