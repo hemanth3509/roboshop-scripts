@@ -25,7 +25,7 @@ delete (){
     echi "inside delete func"
 }
 options(){
-    OPTSTRING=":s:ad:D:tm"
+    OPTSTRING=":sadDt:m"
     echo "inside options "
 while getopts ${OPTSTRING} opt;
 echo "inside while loop"
