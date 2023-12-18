@@ -17,14 +17,22 @@ help(){
     echo -e " -t <time> \n "
 }
 
-archive (){
+action (){
     echo "inside archive func"
-    if [ ! -d "$SOURCE_DIR" ] # ! denotes opposite
+    if [ ! -d "$SOURCE_DIR" ] && [ "$archive" == "archive" ]  # ! denotes opposite
 then
     echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
     else
     echo -e "$G Source directory exists $SOURCE_DIR please archive $N"
 fi
+
+    if [ ! -d "$SOURCE_DIR" ] && [ "$archive" == "delete" ]  # ! denotes opposite
+then
+    echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
+    else
+    echo -e "$G Source directory exists $SOURCE_DIR please delete $N"
+fi
+
 }
 
 delete (){
@@ -73,11 +81,11 @@ fi
 
 echo " after options calling" 
 
-if [ "$archive" == "archive" ]
+if [ "$archive" == "archive" ] || [ "$archive" == "delete" ]
 then
-archive
-else [ "$archive" == "delete" ]
-delete
+action "$archive"
+else
+help
 fi
 
 if [ "$archive" == " " ]
