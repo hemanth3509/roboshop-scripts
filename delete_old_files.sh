@@ -28,7 +28,6 @@ options(){
     OPTSTRING=":s:ad:D:t:"
     echo "inside options "
 while getopts ${OPTSTRING} opt;
-echo "inside while loop"
 do
 case ${opt} in
 s) 
