@@ -32,6 +32,7 @@ then
         echo -e "$G Source directory exists $SOURCE_DIR please delete $N"
     fi
 fi
+}
 
 options(){
     OPTSTRING=":s:a:d:t:"
@@ -83,4 +84,4 @@ fi
 #do
 #    echo "Deleting file: $line"
 #    rm -rf $line
-#done <<< $FILES_TO_DELETE
+# done <<< $FILES_TO_DELETE
