@@ -80,6 +80,11 @@ else [ "$archive" == "delete" ]
 delete
 fi
 
+if [ "$archive" == " " ]
+then 
+help
+fi
+
 
 #FILES_TO_DELETE=$(find $SOURCE_DIR -type f -mtime +14 -name "*.log")
 
