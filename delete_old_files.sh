@@ -34,10 +34,10 @@ s)
     echo "source dir $SOURCE_DIR ";;
 a)  archive=$4 ; 
     echo " archive $archive" ;;
-D)  DESTINATION=$5 ; 
-    echo " date is $DESTINATION" ;;
+D)  DESTINATION=$6 ; 
+    echo " destination is $DESTINATION" ;;
 t) 
-    TIME=$7 ; 
+    TIME=$8 ; 
     echo " time is $TIME" ;;
 #:) 
 ##    echo " in : please pass the arguments";
