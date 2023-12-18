@@ -11,6 +11,16 @@ main (){
 options "$@"
 }
 
+help(){
+    echo -e " Please find the below usage of the script \n"
+    echo -e " -s <source dir> \n "
+    echo -e " -a <Archive> \n "
+    echo -e " -D <Delete> \n "
+    echo -e " -d <destination > \n "
+    echo -e " -t <time> \n "
+}
+
+
 options(){
     echo "inside options "
 local OPTIND opt i
@@ -22,10 +32,10 @@ a) echo " archive ";;
 D) echo "Delete " ;;
 d) DATE=$2 ; echo " date $DATE" ;;
 t) TIME=$3 ; echo " time is $TIME" ;;
-\?) help;exit 1 ;;
+*) help;exit 1 ;;
 esac
 done <<< "$@"
-
+}
 
 
 echo " after options calling" 
@@ -37,15 +47,7 @@ help
 fi
 
 
-help(){
-    echo -e " Please find the below usage of the script \n"
-    echo -e " -s <source dir> \n "
-    echo -e " -a <Archive> \n "
-    echo -e " -D <Delete> \n "
-    echo -e " -d <destination > \n "
-    echo -e " -t <time> \n "
-}
-}
+
 
 
 
