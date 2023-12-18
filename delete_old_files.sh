@@ -12,9 +12,8 @@ echo " Script started $OPTARG"
 help(){
     echo -e " Please find the below usage of the script \n"
     echo -e " -s <source dir> \n "
-    echo -e " -a <Archive> \n "
-    echo -e " -D <Delete> \n "
-    echo -e " -d <destination > \n "
+    echo -e " -a <Archive> or <Delete> \n "
+    echo -e " -D <destination > \n "
     echo -e " -t <time> \n "
 }
 
@@ -25,7 +24,7 @@ delete (){
     echi "inside delete func"
 }
 options(){
-    OPTSTRING=":s:ad:D:t:"
+    OPTSTRING=":s:a:D:t:"
     echo "inside options "
 while getopts ${OPTSTRING} opt;
 do
@@ -33,13 +32,10 @@ case ${opt} in
 s) 
     SOURCE_DIR=$2 ; 
     echo "source dir $SOURCE_DIR ";;
-a)  archive=true ; 
+a)  archive=$4 ; 
     echo " archive $archive" ;;
-d) 
-    Delete=true ; 
-    echo "Delete $Delete" ;;
-D)  DATE=$5 ; 
-    echo " date is $DATE" ;;
+D)  DESTINATION=$5 ; 
+    echo " date is $DESTINATION" ;;
 t) 
     TIME=$7 ; 
     echo " time is $TIME" ;;
@@ -69,10 +65,10 @@ echo -e "Calling help if inputs are empty \n"
 help
 fi
 
-if [ "$archive" == "true" ]
+if [ "$archive" == "archive" ]
 then
 archive
-else [ "$Delete" == "true" ]
+else [ "$Delete" == "delete" ]
 fi
 
 
