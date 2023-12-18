@@ -68,7 +68,7 @@ fi
 if [ "$archive" == "archive" ]
 then
 archive
-else [ "$Delete" == "delete" ]
+else [ "$archive" == "delete" ]
 fi
 
 
