@@ -5,10 +5,6 @@
 #Y="\e[33m"
 #N="\e[0m"
 
-main (){
-    options "$@"
-}
-
 otions(){
 local OPTIND opt i
 while getopts ":saDdt:" opt;
@@ -23,12 +19,11 @@ t) TIME=$3 ; echo " time is $TIME" ;;
 esac
 done
 
-}
-
 if [ "$SOURCE_DIR" = " " ] || [ "$DATE" = " " ] || [ "$TIME" = " " ]
 then
 help
 fi
+
 
 help(){
     echo -e " Please find the below usage of the script \n"
@@ -38,6 +33,9 @@ help(){
     echo -e " -d <destination > \n "
     echo -e " -t <time> \n "
 }
+}
+
+
 
 
 #if [ ! -d $SOURCE_DIR ] # ! denotes opposite
