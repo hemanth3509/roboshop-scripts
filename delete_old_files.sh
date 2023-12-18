@@ -51,11 +51,11 @@ done
 
 echo "Before calling options"
 echo " $1"
-if [ "$1" != " " ]
+if [ "$1" == " " ]
 then
-options "$@"
-else
 help
+else
+options "$@"
 fi
 
 echo " after options calling" 
