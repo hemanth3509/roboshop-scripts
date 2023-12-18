@@ -25,21 +25,21 @@ delete (){
     echi "inside delete func"
 }
 options(){
-    OPTSTRING=":s:a:D:d:t:m"
+    OPTSTRING=":s:ad:D:tm"
     echo "inside options "
 while getopts ${OPTSTRING} opt;
-do
 echo "inside while loop"
+do
 case ${opt} in
 s) 
     SOURCE_DIR=$2 ; 
     echo "source dir $SOURCE_DIR ";;
 a)  archive=true ; 
     echo " archive $archive" ;;
-D) 
+d) 
     Delete=true ; 
     echo "Delete $Delete" ;;
-d)  DATE=$5 ; 
+D)  DATE=$5 ; 
     echo " date is $DATE" ;;
 t) 
     TIME=$7 ; 
