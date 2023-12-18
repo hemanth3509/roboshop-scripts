@@ -1,7 +1,7 @@
 #!/bin/bash
 
 R="\e[31m"
-#G="\e[32m"
+G="\e[32m"
 #Y="\e[33m"
 N="\e[0m"
 
@@ -23,7 +23,7 @@ archive (){
 then
     echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
     else
-    echo "$G Source directory exists $SOURCE_DIR $N"
+    echo "$G Source directory exists $SOURCE_DIR please archive $N"
 fi
 }
 
@@ -33,7 +33,7 @@ delete (){
 then
     echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
     else
-    echo "$G Source directory exists $SOURCE_DIR $N"
+    echo "$G Source directory exists $SOURCE_DIR please delete $N"
     fi
 }
 options(){
