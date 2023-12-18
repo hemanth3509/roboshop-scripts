@@ -39,10 +39,10 @@ D)  DESTINATION=$6 ;
 t) 
     TIME=$8 ; 
     echo " time is $TIME" ;;
-#:) 
-##    echo " in : please pass the arguments";
-#   help; 
- #   exit 1 ;;
+:) 
+    echo " in : please pass the arguments";
+   help; 
+    exit 1 ;;
 \?)  help;
     exit 1 ;;
 esac
