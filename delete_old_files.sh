@@ -33,12 +33,12 @@ echo "inside while loop"
 case ${opt} in
 s) 
     SOURCE_DIR=$2 ; 
-    echo "source dir $SOURCE_DIR ${OPTARG}";;
+    echo "source dir $SOURCE_DIR ";;
 a)  archive=true ; 
-    echo " archive " ;;
+    echo " archive $archive" ;;
 D) 
     Delete=true ; 
-    echo "Delete " ;;
+    echo "Delete $Delete" ;;
 d)  DATE=$5 ; 
     echo " date is $DATE" ;;
 t) 
