@@ -21,12 +21,11 @@ help(){
 
 options(){
     echo "inside options "
-local OPTIND opt i
 while getopts ":saDdt:" opt;
 do
 case $opt in
 s) SOURCE_DIR=$1 ; echo "source dir $SOURCE_DIR ";;
-a) echo " archive ";;
+a) echo " archive "; echo "$OPTARGS " ;;
 D) echo "Delete " ;;
 d) DATE=$2 ; echo " date $DATE" ;;
 t) TIME=$3 ; echo " time is $TIME" ;;
