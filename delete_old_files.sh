@@ -7,6 +7,10 @@
 
 echo " Script started $OPTARG"
 
+main (){
+options "$@"
+}
+
 options(){
     echo "inside options "
 local OPTIND opt i
@@ -22,7 +26,7 @@ t) TIME=$3 ; echo " time is $TIME" ;;
 esac
 done
 
-options "$@"
+
 
 echo " after options calling" 
 
