@@ -55,7 +55,7 @@ done
 }
 
 echo "Before calling options"
-if [ $options == " " ]
+if [ "$1" == " " ]
 then
 help
 else
