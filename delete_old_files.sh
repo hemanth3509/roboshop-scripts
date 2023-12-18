@@ -33,38 +33,6 @@ then
     fi
 fi
 
-
- #   echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
- #   else
- #   if [[ "$archive" == "archive" ]]
- #   then
- #   echo -e "$G Source directory exists $SOURCE_DIR please archive $N" ||
- #   fi
- #   if [[ " $archive" == "delete " ]]
- #   then
- #   echo -e "$G Source directory exists $SOURCE_DIR please delete $N"
- #   fi
-#fi
-
-
-    if [ ! -d "$SOURCE_DIR" ]    # ! denotes opposite
-then
-    echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
-    else [ "$archive" == "delete" ]
-    echo 
-fi
-
-}
-
-delete (){
-    echo "inside delete func"
-        if [ ! -d "$SOURCE_DIR" ] # ! denotes opposite
-then
-    echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
-    else
-    echo -e "$G Source directory exists $SOURCE_DIR please delete $N"
-    fi
-}
 options(){
     OPTSTRING=":s:a:d:t:"
     echo "inside options $1 "
@@ -108,12 +76,6 @@ action "$archive"
 else
 help
 fi
-
-#if [ "$archive" != "archive" ] || [ "$archive" == "delete" ]
-#then 
-#help
-#fi
-
 
 #FILES_TO_DELETE=$(find $SOURCE_DIR -type f -mtime +14 -name "*.log")
 
