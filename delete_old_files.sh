@@ -51,7 +51,7 @@ done
 
 echo "Before calling options"
 echo " $1"
-if [ "$1" == " " ]
+if [ "$1" != "-s" ]
 then
 help
 else
