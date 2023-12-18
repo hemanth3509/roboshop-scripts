@@ -19,17 +19,17 @@ help(){
 
 action (){
     echo "inside archive func"
-    if [ ! -d "$SOURCE_DIR" ] && [ "$archive" == "archive" ]  # ! denotes opposite
+    if [ ! -d "$SOURCE_DIR" ]  # ! denotes opposite
 then
     echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
-    else
+    else [ "$archive" == "archive" ]
     echo -e "$G Source directory exists $SOURCE_DIR please archive $N"
 fi
 
-    if [ ! -d "$SOURCE_DIR" ] && [ "$archive" == "delete" ]  # ! denotes opposite
+    if [ ! -d "$SOURCE_DIR" ]    # ! denotes opposite
 then
     echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
-    else
+    else [ "$archive" == "delete" ]
     echo -e "$G Source directory exists $SOURCE_DIR please delete $N"
 fi
 
