@@ -55,7 +55,12 @@ done
 }
 
 echo "Before calling options"
+if [ $options == " " ]
+then
+help
+else
 options "$@"
+fi
 
 echo " after options calling" 
 
