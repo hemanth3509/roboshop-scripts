@@ -6,7 +6,7 @@
 #N="\e[0m"
 
 main (){
-    options $@
+    options "$@"
 }
 
 otions(){
