@@ -5,7 +5,12 @@
 #Y="\e[33m"
 #N="\e[0m"
 
-otions(){
+echo " Script started"
+
+
+
+options(){
+    echo "inside options "
 local OPTIND opt i
 while getopts ":saDdt:" opt;
 do
@@ -19,8 +24,13 @@ t) TIME=$3 ; echo " time is $TIME" ;;
 esac
 done
 
+options "$@"
+
+echo " after options calling" 
+
 if [ "$SOURCE_DIR" = " " ] || [ "$DATE" = " " ] || [ "$TIME" = " " ]
 then
+echo "Calling help if inputs are empty"
 help
 fi
 
