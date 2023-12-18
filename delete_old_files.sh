@@ -13,7 +13,7 @@ help(){
     echo -e " Please find the below usage of the script \n"
     echo -e " -s <source dir> \n "
     echo -e " -a <Archive> or <Delete> \n "
-    echo -e " -D <destination > \n "
+    echo -e " -d <destination > \n "
     echo -e " -t <time> \n "
 }
 
@@ -24,7 +24,7 @@ delete (){
     echi "inside delete func"
 }
 options(){
-    OPTSTRING=":s:a:D:t:"
+    OPTSTRING=":s:a:d:t:"
     echo "inside options $1 "
 while getopts ${OPTSTRING} opt;
 do
@@ -34,7 +34,7 @@ s)
     echo "source dir $SOURCE_DIR ";;
 a)  archive=$4 ; 
     echo " archive $archive" ;;
-D)  DESTINATION=$6 ; 
+d)  DESTINATION=$6 ; 
     echo " destination is $DESTINATION" ;;
 t) 
     TIME=$8 ; 
