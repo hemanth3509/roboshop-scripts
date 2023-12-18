@@ -25,18 +25,31 @@ delete (){
     echi "inside delete func"
 }
 options(){
+    OPTSTRING=":s:a:D:d:t:m"
     echo "inside options "
-while getopts ":s:a:D:d:t:m" opt;
+while getopts ${OPTSTRING} opt;
 do
 echo "inside while loop"
-case $opt in
-s) SOURCE_DIR=$2 ; echo "source dir $SOURCE_DIR ${OPTARG}";;
-a) archive=true ; echo " archive " ;;
-D) Delete=true ; echo "Delete " ;;
-d) DATE=$5 ; echo " date is $DATE" ;;
-t) TIME=$7 ; echo " time is $TIME" ;;
-:) help; exit 1 ;;
-?) help;exit 1 ;;
+case ${opt} in
+s) 
+    SOURCE_DIR=$2 ; 
+    echo "source dir $SOURCE_DIR ${OPTARG}";;
+a)  archive=true ; 
+    echo " archive " ;;
+D) 
+    Delete=true ; 
+    echo "Delete " ;;
+d)  DATE=$5 ; 
+    echo " date is $DATE" ;;
+t) 
+    TIME=$7 ; 
+    echo " time is $TIME" ;;
+:) 
+    echo " in : please pass the arguments";
+    help; 
+    exit 1 ;;
+?)  help;
+    exit 1 ;;
 esac
 done
 }
