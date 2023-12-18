@@ -50,7 +50,7 @@ done
 }
 
 echo "Before calling options"
-if [ "$1" == " " ]
+if [ "$1" != " " ]
 then
 options "$@"
 else
