@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#R="\e[31m"
+R="\e[31m"
 #G="\e[32m"
 #Y="\e[33m"
-#N="\e[0m"
+N="\e[0m"
 
 echo " Script started $OPTARG"
 
@@ -19,6 +19,10 @@ help(){
 
 archive (){
     echo "inside archive func"
+    if [ ! -d "$SOURCE_DIR" ] # ! denotes opposite
+then
+    echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
+fi
 }
 delete (){
     echi "inside delete func"
@@ -60,26 +64,12 @@ fi
 
 echo " after options calling" 
 
-if [ "$SOURCE_DIR" = " " ] || [ "$DATE" = " " ] || [ "$TIME" = " " ]
-then
-echo -e "Calling help if inputs are empty \n"
-help
-fi
-
 if [ "$archive" == "archive" ]
 then
 archive
 else [ "$archive" == "delete" ]
 fi
 
-
-
-
-
-#if [ ! -d $SOURCE_DIR ] # ! denotes opposite
-#then
-#    echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
-#fi
 
 #FILES_TO_DELETE=$(find $SOURCE_DIR -type f -mtime +14 -name "*.log")
 
