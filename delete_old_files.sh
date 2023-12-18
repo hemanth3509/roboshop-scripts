@@ -43,7 +43,7 @@ t)
     echo " in : please pass the arguments";
    help; 
     exit 1 ;;
-\?)  help;
+?)  help;
     exit 1 ;;
 esac
 done
