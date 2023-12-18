@@ -35,7 +35,8 @@ a) archive=true ; echo " archive " ;;
 D) Delete=true ; echo "Delete " ;;
 d) DATE=$5 ; echo " date is $DATE" ;;
 t) TIME=$7 ; echo " time is $TIME" ;;
-*) help;exit 1 ;;
+:) help; exit 1 ;;
+?) help;exit 1 ;;
 esac
 done
 }
