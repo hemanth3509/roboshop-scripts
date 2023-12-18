@@ -26,6 +26,12 @@ then
     if [ "$archive" == "archive" ]
     then
     echo -e "$G Source directory exists $SOURCE_DIR please archive $N"
+    if [ ! -d "$DESTINATION" ]
+    then
+    echo -e "$R destination directory doesn't exists $N"
+    else 
+    echo -e "$G destination exits $N"
+    fi
     fi
     if [ "$archive" == "delete" ]
     then 
@@ -73,7 +79,7 @@ echo " after options calling"
 
 if [ "$archive" == "archive" ] || [ "$archive" == "delete" ]
 then
-action "$archive"
+action "$archive" "$DESTINATION"
 else
 help
 fi
