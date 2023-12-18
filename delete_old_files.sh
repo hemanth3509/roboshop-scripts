@@ -31,7 +31,7 @@ d) DATE=$2 ; echo " date $DATE" ;;
 t) TIME=$3 ; echo " time is $TIME" ;;
 *) help;exit 1 ;;
 esac
-done <<< "$@"
+done
 }
 
 echo "Before calling options"
