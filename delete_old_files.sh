@@ -28,7 +28,7 @@ fi
 }
 
 delete (){
-    echi "inside delete func"
+    echo "inside delete func"
         if [ ! -d "$SOURCE_DIR" ] # ! denotes opposite
 then
     echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
