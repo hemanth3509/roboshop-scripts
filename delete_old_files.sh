@@ -25,7 +25,7 @@ delete (){
 }
 options(){
     OPTSTRING=":s:a:D:t:"
-    echo "inside options "
+    echo "inside options $1 "
 while getopts ${OPTSTRING} opt;
 do
 case ${opt} in
