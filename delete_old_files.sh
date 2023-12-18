@@ -37,7 +37,7 @@ then
     fi
 }
 options(){
-    OPTSTRING=":s:a:d:t:"
+    OPTSTRING=":sadt:"
     echo "inside options $1 "
 while getopts ${OPTSTRING} opt;
 do
