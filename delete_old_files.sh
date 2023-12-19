@@ -23,16 +23,19 @@ action (){
 then
     echo -e "$R Source directory: $SOURCE_DIR does not exists. $N"
     else
-    if [ "$archive" == "archive" ]
+    if [ "$archive" == "archive" ] && [ ! -d "$DESTINATION" ]
     then
-    echo -e "$G Source directory exists $SOURCE_DIR please archive $N"
-    if [ ! -d "$DESTINATION" ]
-    then
-    echo -e "$Y destination directory doesn't exists , Hence creating new one $N"
-    else 
-    echo -e "$G destination exits $N"
+    echo -e "$R Please provide destination directory $N"
+    else
+    echo -e "$G destination exits to archive $N"
     fi
-    fi
+# if [ ! -d "$DESTINATION" ]
+  #  then
+  #  echo -e "$Y destination directory doesn't exists , Hence creating new one $N"
+  #  else 
+  #  echo -e "$G destination exits $N"
+  #  fi
+  #  fi
     if [ "$archive" == "delete" ]
     then 
         echo -e "$G Source directory exists $SOURCE_DIR please delete $N"
