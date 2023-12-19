@@ -2,7 +2,7 @@
 
 R="\e[31m"
 G="\e[32m"
-#Y="\e[33m"
+Y="\e[33m"
 N="\e[0m"
 
 echo " Script started $OPTARG"
@@ -28,7 +28,7 @@ then
     echo -e "$G Source directory exists $SOURCE_DIR please archive $N"
     if [ ! -d "$DESTINATION" ]
     then
-    echo -e "$R destination directory doesn't exists $N"
+    echo -e "$Y destination directory doesn't exists , Hence creating new one $N"
     else 
     echo -e "$G destination exits $N"
     fi
@@ -47,14 +47,14 @@ while getopts ${OPTSTRING} opt;
 do
 case ${opt} in
 s) 
-    SOURCE_DIR=$2 ; 
+    SOURCE_DIR=$OPTARG ; 
     echo "source dir $SOURCE_DIR ";;
-a)  archive=$4 ; 
+a)  archive=$OPTARG ; 
     echo " archive $archive" ;;
-d)  DESTINATION=$6 ; 
+d)  DESTINATION=$OPTARG ; 
     echo " destination is $DESTINATION" ;;
 t) 
-    TIME=$8 ; 
+    TIME=$OPTARG; 
     echo " time is $TIME" ;;
 :) 
     echo " in : please pass the arguments";
@@ -64,6 +64,7 @@ t)
     exit 1 ;;
 esac
 done
+shift $((OPTIND -1))
 }
 
 echo "Before calling options"
