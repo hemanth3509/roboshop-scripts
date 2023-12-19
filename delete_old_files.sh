@@ -27,15 +27,17 @@ then
     then
     echo -e "$R Please provide destination directory $N"
     else
+     if [ "$archive" == "archive" ] && [ -d "$DESTINATION" ]
+     then
     echo -e "$G destination exits to archive $N"
     fi
-# if [ ! -d "$DESTINATION" ]
+  # if [ ! -d "$DESTINATION" ]
   #  then
   #  echo -e "$Y destination directory doesn't exists , Hence creating new one $N"
   #  else 
   #  echo -e "$G destination exits $N"
   #  fi
-  #  fi
+   fi
     if [ "$archive" == "delete" ]
     then 
         echo -e "$G Source directory exists $SOURCE_DIR please delete $N"
